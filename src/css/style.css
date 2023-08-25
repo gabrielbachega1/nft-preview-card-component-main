@@ -1,0 +1,169 @@
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --ciano: hsl(178, 100%, 50%);
+    --main-bg-color: hsl(217, 54%, 11%);
+    --color-card-bg: hsl(216, 50%, 16%);
+    --azul-escuro: hsl(215, 32%, 27%);
+    --branco: hsl(0, 0%, 100%);
+}
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+html {
+    background-color: var(--main-bg-color);
+}
+
+main {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cartao {
+    background-color: var(--color-card-bg);
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cartao .images {
+    position: relative;
+}
+
+.cartao .images .image-preview {
+    display: block;
+}
+
+.cartao .images .image-preview,
+.img-overlay {
+    width: 300px;
+    height: 300px;
+}
+
+.cartao .images .image-preview a img {
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.cartao .images .img-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--ciano);
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.cartao .images .view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+}
+
+.cartao .images:hover .img-overlay {
+    opacity: 0.5;
+    transition: ease-in-out 0.3s;
+}
+
+.cartao .images:hover .img-overlay+.view {
+    display: block;
+}
+
+.cartao .images:hover {
+    cursor: pointer;
+}
+
+.informacoes {
+    padding: 25px 0px;
+}
+
+.informacoes .titulo {
+    padding: 0 0 20px;
+}
+
+.informacoes .titulo a {
+    color: var(--branco);
+}
+
+.informacoes .titulo a:hover,
+.detalhes-do-criador span a:hover {
+    transition: ease-in-out 0.3s;
+    color: var(--ciano);
+}
+
+.informacoes .descricao {
+    color: var(--soft-blue);
+    font-size: 18px;
+}
+
+.detalhes-de-compra {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--soft-blue);
+}
+
+.detalhes-de-compra .valor,
+.prazo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.detalhes-de-compra .valor span {
+    font-weight: bold;
+    color: var(--ciano);
+}
+
+.detalhes-de-compra .prazo span {
+    color: var(--soft-blue);
+}
+
+.detalhes-do-criador {
+    padding: 15px 0 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detalhes-do-criador span {
+    color: var(--soft-blue);
+}
+
+.detalhes-do-criador img {
+    width: 25px;
+    border: 1px solid var(--branco);
+    border-radius: 50%;
+}
+
+.detalhes-do-criador span a {
+    color: var(--branco);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: hsl(228, 45%, 44%);
+}
+
+.attribution a {
+    color: var(--branco);
+}
+
+.attribution a:hover {
+    color: var(--ciano);
+    transition: ease-in-out 0.3s;
+}
